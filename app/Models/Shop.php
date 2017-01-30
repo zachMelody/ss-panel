@@ -22,7 +22,7 @@ class Shop extends Model
 					$content_text .= "添加流量 ".$value." G ";
 					break;
 				case "expire":
-					$content_text .= "为账号的有效期添加 ".$value." 天 ";
+					$content_text .= "有效期 ".$value." 天 ";
 					break;
 				case "class":
 					$content_text .= "为账号升级为等级 ".$value." ,有效期 ".$content["class_expire"]." 天";
@@ -113,10 +113,17 @@ class Shop extends Model
 					{
 						if(Config::get('enable_bought_reset') == 'true')
 						{
-							$user->transfer_enable=$value*1024*1024*1024;
-							$user->u = 0;
-							$user->d = 0;
-							$user->last_day_t = 0;
+							if($value < 39)
+							{
+								$user->transfer_enable=$user->transfer_enable+$value*1024*1024*1024;
+							}
+							else
+							{
+								$user->transfer_enable=$value*1024*1024*1024;
+								$user->u = 0;
+								$user->d = 0;
+								$user->last_day_t = 0;
+							}
 						}
 						else
 						{
@@ -127,10 +134,17 @@ class Shop extends Model
 					{
 						if($this->attributes['auto_reset_bandwidth'] == 1)
 						{
-							$user->transfer_enable=$value*1024*1024*1024;
-							$user->u = 0;
-							$user->d = 0;
-							$user->last_day_t = 0;
+							if($value < 39)
+							{
+								$user->transfer_enable=$user->transfer_enable+$value*1024*1024*1024;
+							}
+							else
+							{
+								$user->transfer_enable=$value*1024*1024*1024;
+								$user->u = 0;
+								$user->d = 0;
+								$user->last_day_t = 0;
+							}
 						}
 						else
 						{
