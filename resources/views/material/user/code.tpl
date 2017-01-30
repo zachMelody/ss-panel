@@ -167,7 +167,6 @@
                 }
             })
         })
-
 	
 	timestamp = {time()}; 
 		
@@ -194,4 +193,3 @@
 	setTimeout(f, 1000);
 })
 </script>
-

@@ -13,6 +13,7 @@
 	<!-- css -->
 	<link href="/theme/material/css/base.min.css" rel="stylesheet">
 	<link href="/theme/material/css/project.min.css" rel="stylesheet">
+	<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 	
 
 	

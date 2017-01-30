@@ -11,7 +11,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-lg-push-0 col-sm-12 col-sm-push-0">
-						<h1 class="content-heading">TOS</h1>
+						<h2> Terms of Service</h2>
 					</div>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 
 
 
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 										<p>用户协议 Terms of Service</p>
@@ -32,7 +32,7 @@
 							
 							<h2 class="content-sub-heading">隐私</h2>
 								
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 										
@@ -49,7 +49,7 @@
 							
 							<h2 class="content-sub-heading">使用条款</h2>
 								
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 										
@@ -70,7 +70,7 @@
 							
 							<h2 class="content-sub-heading">其它</h2>
 								
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 										

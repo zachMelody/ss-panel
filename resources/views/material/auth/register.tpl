@@ -2,7 +2,71 @@
 
 {include file='header.tpl'}
 
+<style type="text/css">
 
+body{
+	background-image: url(//w2ss.xyz/theme/material/images/bg2.png);
+}
+.form-control {
+  height: 42px;
+  background: transparent;
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+  -webkit-transition: border-color 0.35s;
+  -moz-transition: border-color 0.35s;
+  -o-transition: border-color 0.35s;
+  -ms-transition: border-color 0.35s;
+  transition: border-color 0.35s;
+  margin: 4px;
+  text-align: center;
+}
+.mebtn:hover,.btn:focus{
+	opacity: 1;
+	-ms-filter: none;
+	filter: none;
+	outline: 0;
+}
+.mebtn{
+	display: block;
+	width: 100%;height: 42px;
+	background: #fff;
+	color: #1f8ded;
+	opacity: 0.85;
+	border-width: 0;
+	outline: 0;
+	transition: opacity 0.35s;
+	border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+.form-control::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.form-control:-moz-placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.form-control::-moz-placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.form-control:-ms-input-placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.form-control:hover,
+.form-control:focus {
+  border-color: #fff;
+}
+@-webkit-keyframes autofill {
+  to {
+    color: #fff;
+    background: transparent;
+  }
+}
+.form-control:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+    
+</style>
 <main class="content">
 		<div class="container">
 			<div class="row">
@@ -12,71 +76,64 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">和我签订契约，成为魔法少女吧。</h1>
+										<h1 style="font-family: Palanquin Dark,PingFang HK,Microsoft Jhenghei UI,sans-serif;font-size: 28px;color: rgba(255,255,255,0.4);font-weight: 500;line-height: 1.1;margin: 50px 0;text-align: center;">世界那么大，我想去看看</h1>
 									</div>
 								</div>
 								<div class="card-inner">
-									<p class="text-center">
-										<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="/theme/material/images/users/avatar-001.jpg">
-										</span>
-									</p>
 									
-										<div class="form-group form-group-label">
+									
+										<div class="form-group">
 											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="name">昵称</label>
-													<input class="form-control" id="name" type="text">
+												<div class="col-md-10 col-md-push-1">		
+												<input class="form-control" id="name" type="text" placeholder="昵称">
 												</div>
 											</div>
 										</div>
 										
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱</label>
-													<input class="form-control" id="email" type="text">
+													<input class="form-control" id="email" type="text" placeholder="邮箱">
 												</div>
 											</div>
 										</div>
 										
 										{if $enable_email_verify == 'true'}
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="email_code">邮箱验证码</label>
-													<input class="form-control" id="email_code" type="text">
+													<input class="form-control" id="email_code" type="text" placeholder="邮箱验证码">
 													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">获取验证码</button>
 												</div>
 											</div>
 										</div>
 										{/if}
 										
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">密码</label>
-													<input class="form-control" id="passwd" type="password">
+													
+													<input class="form-control" id="passwd" type="password" placeholder="密码">
 												</div>
 											</div>
 										</div>
 										
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="repasswd">重复密码</label>
-													<input class="form-control" id="repasswd" type="password">
+													
+													<input class="form-control" id="repasswd" type="password" placeholder="重复密码">
 												</div>
 											</div>
 										</div>
 										
 										
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="imtype">选择您的联络方式</label>
-													<select class="form-control" id="imtype">
-														<option></option>
+												<div class="col-md-10 col-md-push-1">								
+													<select class="form-control" id="imtype" style="color: #68B1F1;text-align: center;">
+														<option>请选择联络方式</option>
 														<option value="1">微信</option>
 														<option value="2">QQ</option>
 														<option value="3">Google+</option>
@@ -87,11 +144,11 @@
 										</div>
 										
 										
-										<div class="form-group form-group-label">
+										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="wechat">在这输入联络方式账号</label>
-													<input class="form-control" id="wechat" type="text">
+													
+													<input class="form-control" id="wechat" type="text" placeholder="在这输入联络方式账号">
 												</div>
 											</div>
 										</div>
@@ -99,18 +156,18 @@
 										
 										
 										{if $enable_invite_code == 'true'}
-											<div class="form-group form-group-label">
+											<div class="form-group">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="code">邀请码</label>
-														<input class="form-control" id="code" type="text" value="{$code}">
+														
+														<input class="form-control" id="code" type="text" value="{$code}" placeholder="邀请码">
 													</div>
 												</div>
 											</div>
 										{/if}
 										
 										{if $geetest_html != null}
-											<div class="form-group form-group-label">
+											<div class="form-group">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
 														<div id="embed-captcha"></div>
@@ -119,29 +176,24 @@
 											</div>
 										{/if}
 										
-										<div class="form-group">
+										<div class="form-group" style="text-align: center;">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button id="tos" type="submit" class="btn btn-block btn-brand waves-attach waves-light">注册</button>
+													<button id="tos" type="submit" class="mebtn">Register</button>
 												</div>
 											</div>
 										</div>
 										
-										<div class="form-group">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<p>注册即代表同意<a href="/tos">服务条款</a>，以及保证所录入信息的真实性，如有不实信息会导致账号被删除。</p>
-												</div>
-											</div>
-										</div>
+										
 									
 								</div>
 							</div>
 						</div>
-						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">已经注册？请登录</a></p>
+						<div class="row">
+							<div class="col-md-12" style="text-align: center;">
+	                    		<a href="/auth/login" style="color: #fff;">Login</a> or <a href="/password/reset" style="color: #fff;">Reset Password</a>
+	                		</div>
 						</div>
-						
 						
 						
 								
@@ -208,7 +260,6 @@
                         $("#result").modal();
                         $("#msg").html(data.msg);
 			document.getElementById("tos").disabled = false; 
-
 			{if $geetest_html != null}
 			captcha.refresh();
 			{/if}
@@ -288,9 +339,6 @@ function time(o) {
 			1000)
 		}
 	}
-
-
-
     $(document).ready(function () {
         $("#email_verify").click(function () {
 			time($("#email_verify"));
@@ -332,7 +380,6 @@ function time(o) {
 		});
 		
 		captchaObj.appendTo("#embed-captcha");
-
 		captcha = captchaObj;
 		// 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
     };
@@ -347,8 +394,3 @@ function time(o) {
 
 {/if}
 
-
-
-
-
-	

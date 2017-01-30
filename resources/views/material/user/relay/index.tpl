@@ -9,27 +9,25 @@
 
 
 
-	<main class="content">
-		<div class="content-header ui-content-header">
-			<div class="container">
-				<h1 class="content-heading">中转规则管理</h1>
+	<section>
+		<div class="container">
+			<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<h1>中转规则管理</h1>
+			</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="col-lg-12 col-md-12">
-				<section class="content-inner margin-top-no">
+		<div class="row">
+			<div class="col-md-12">
+	
+				<div class="box">
+					<p>系统中您所有的中转规则。</p>							
+				</div>
 					
-					<div class="card">
-						<div class="card-main">
-							<div class="card-inner">
-								<p>系统中您所有的中转规则。</p>
-							</div>
-						</div>
-					</div>
-					
-					<div class="table-responsive">
+					<div class="box">
 						{$rules->render()}
-						<table class="table">
+						<table class="table table-striped">
 						    <tr>
 							<th>操作</th>
 							<th>ID</th>
@@ -42,8 +40,8 @@
 							{foreach $rules as $rule}
 								<tr>
 								<td>
-									<a class="btn btn-brand" href="/user/relay/{$rule->id}/edit">编辑</a>
-									<a class="btn btn-brand-accent" id="delete" value="{$rule->id}" href="javascript:void(0);" onClick="delete_modal_show('{$rule->id}')">删除</a>
+									<a class="btn btn-info" href="/user/relay/{$rule->id}/edit">编辑</a>
+									<a class="btn btn-danger btn-sm" id="delete" value="{$rule->id}" href="javascript:void(0);" onClick="delete_modal_show('{$rule->id}')">删除</a>
 								</td>
 								<td>#{$rule->id}</td>
 								{if $rule->source_node_id == 0}
@@ -60,12 +58,13 @@
 						{$rules->render()}
 					</div>
 					
-					<div class="fbtn-container">
-						<div class="fbtn-inner">
-							<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" href="/user/relay/create">+</a>
-							
+					<div class="row">
+						<div class="col-md-4 col-lg-4">
+							<a class="btn btn-info" href="/user/relay/create">自定义中转节点</a>
 						</div>
-					</div>
+					</div>	
+							
+						
 					
 					<div aria-hidden="true" class="modal modal-va-middle fade" id="delete_modal" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-xs">
@@ -84,15 +83,11 @@
 						</div>
 					</div>
 					
-					{include file='dialog.tpl'}
-
-							
+					{include file='dialog.tpl'}							
 			</div>
-			
-			
-			
 		</div>
-	</main>
+		</div>
+	</section>
 
 
 

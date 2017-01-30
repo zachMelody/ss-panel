@@ -3,374 +3,290 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
-	<meta name="theme-color" content="#ff9800">
-	<title>{$config["appName"]}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<meta name="theme-color" content="#ff4081">
+	<title>{$config["appName"]}</title>	
+	<!-- css -->	
+	<!--link href="//fonts.lug.ustc.edu.cn/icon?family=Material+Icons" rel="stylesheet"-->	
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,400,700|Palanquin+Dark:500" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="/theme/material/css/main.css" type="text/css" rel="stylesheet" media="screen,projection">
+	<!-- js -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 
-	
-	
-	<!-- css -->
-	<link href="/theme/material/css/base.min.css" rel="stylesheet">
-	<link href="/theme/material/css/project.min.css" rel="stylesheet">
-	<link href="//fonts.lug.ustc.edu.cn/icon?family=Material+Icons" rel="stylesheet">
-	
-
-	
-	<!-- favicon -->
-	<!-- ... -->
-	<style>
-		.pagination {
-			display:inline-block;
-			padding-left:0;
-			margin:20px 0;
-			border-radius:4px
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		.modal {
+		  -webkit-backface-visibility: hidden;
+		          backface-visibility: hidden;
+		  display: none;
+		  overflow: hidden;
+		  outline: 0;
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  z-index: 40;
+		  -webkit-overflow-scrolling: touch;
+		  -ms-overflow-style: -ms-autohiding-scrollbar;
 		}
-		.pagination>li {
-			display:inline
-		}
-		.pagination>li>a,.pagination>li>span {
-			position:relative;
-			float:left;
-			padding:6px 12px;
-			margin-left:-1px;
-			line-height:1.42857143;
-			color:#337ab7;
-			text-decoration:none;
-			background-color:#fff;
-			border:1px solid #ddd
-		}
-		.pagination>li:first-child>a,.pagination>li:first-child>span {
-			margin-left:0;
-			border-top-left-radius:4px;
-			border-bottom-left-radius:4px
-		}
-		.pagination>li:last-child>a,.pagination>li:last-child>span {
-			border-top-right-radius:4px;
-			border-bottom-right-radius:4px
-		}
-		.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover {
-			color:#23527c;
-			background-color:#eee;
-			border-color:#ddd
-		}
-		.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover {
-			z-index:2;
-			color:#fff;
-			cursor:default;
-			background-color:#337ab7;
-			border-color:#337ab7
-		}
-		.pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover {
-			color:#777;
-			cursor:not-allowed;
-			background-color:#fff;
-			border-color:#ddd
-		}
-		.pagination-lg>li>a,.pagination-lg>li>span {
-			padding:10px 16px;
-			font-size:18px
-		}
-		.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span {
-			border-top-left-radius:6px;
-			border-bottom-left-radius:6px
-		}
-		.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span {
-			border-top-right-radius:6px;
-			border-bottom-right-radius:6px
-		}
-		.pagination-sm>li>a,.pagination-sm>li>span {
-			padding:5px 10px;
-			font-size:12px
-		}
-		.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span {
-			border-top-left-radius:3px;
-			border-bottom-left-radius:3px
-		}
-		.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span {
-			border-top-right-radius:3px;
-			border-bottom-right-radius:3px
-		}
-		.pager {
-			padding-left:0;
-			margin:20px 0;
-			text-align:center;
-			list-style:none
-		}
-		.pager li {
-			display:inline
-		}
-		.pager li>a,.pager li>span {
-			display:inline-block;
-			padding:5px 14px;
-			background-color:#fff;
-			border:1px solid #ddd;
-			border-radius:15px
-		}
-		.pager li>a:focus,.pager li>a:hover {
-			text-decoration:none;
-			background-color:#eee
-		}
-		.pager .next>a,.pager .next>span {
-			float:right
-		}
-		.pager .previous>a,.pager .previous>span {
-			float:left
-		}
-		.pager .disabled>a,.pager .disabled>a:focus,.pager .disabled>a:hover,.pager .disabled>span {
-			color:#777;
-			cursor:not-allowed;
-			background-color:#fff
+		.modal-open .modal {
+		  overflow-x: hidden;
+		  overflow-y: auto;
 		}
 
-		
-		
-		
-		
-		.pagination>li>a,
-		.pagination>li>span {
-		  border: 1px solid white;
+		.modal-backdrop {
+		  -webkit-backface-visibility: hidden;
+		          backface-visibility: hidden;
+		  background-color: #000000;
+		  opacity: 0;
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		  z-index: 39;
 		}
-		.pagination>li.active>a {
-		  background: #f50057;
-		  color: #fff;
+		.modal-backdrop.fade.in {
+		  opacity: 0.54;
 		}
-		
-		.pagination>li>a {
-		  background: white;
-		  color: #000;
+		.menu ~ .modal-backdrop {
+		  z-index: 30;
 		}
-		
-		
-		.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-			color: #fff;
-			background-color: #000;
-			border-color: #000;
+		.menu ~ .modal-backdrop.in {
+		  opacity: 0.54;
 		}
 
-		.pagination>.active>span {
-		  background-color: #f50057;
-		  color: #fff;
-		  border-color: #fff;
+		.modal-close {
+		  color: #727272;
+		  cursor: pointer;
+		  display: block;
+		  float: right;
+		  font-size: 20px;
+		  line-height: 28px;
+		  margin-right: -8px;
+		  padding-right: 8px;
+		  padding-left: 8px;
+		}
+		.modal-close:focus, .modal-close:hover {
+		  color: #ff4081;
+		  text-decoration: none;
+		}
+
+		.modal-content {
+		  background-clip: padding-box;
+		  background-color: #ffffff;
+		  border: 1px solid transparent;
+		  border-radius: 4px;
+		  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
+		  outline: 0;
+		  position: relative;
+		}
+
+		.modal-dialog {
+		  margin: 48px 16px;
+		  position: relative;
+		}
+		.modal-dialog.modal-full {
+		  height: 100%;
+		  height: calc(100% - 96px);
+		}
+		.modal-dialog.modal-full .modal-content {
+		  height: 100%;
+		}
+		.modal.fade .modal-dialog {
+		  -webkit-transform: scale(0, 0);
+		          transform: scale(0, 0);
+		  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		  transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+		.modal.fade.in .modal-dialog {
+		  -webkit-transform: scale(1, 1);
+		          transform: scale(1, 1);
+		}
+		@media only screen and (min-width: 480px) {
+		  .modal-dialog.modal-xs {
+		    margin-right: auto;
+		    margin-left: auto;
+		    width: 448px;
+		  }
+		}
+		@media only screen and (min-width: 992px) {
+		  .modal-dialog {
+		    margin-right: auto;
+		    margin-left: auto;
+		    width: 960px;
+		  }
+		}
+		@media only screen and (min-width: 1440px) {
+		  .modal-dialog {
+		    width: 1408px;
+		  }
+		}
+
+		.modal-footer {
+		  padding-right: 24px;
+		  padding-left: 24px;
+		}
+		.modal-footer .btn + .btn {
+		  margin-right: 16px;
+		}
+		.modal-footer .text-right .btn + .btn {
+		  margin-right: auto;
+		  margin-left: 16px;
+		}
+
+		.modal-heading {
+		  margin-top: 24px;
+		  margin-bottom: 24px;
+		  padding-right: 24px;
+		  padding-left: 24px;
+		  position: relative;
+		}
+
+		.modal-inner {
+		  margin-top: 24px;
+		  margin-bottom: 24px;
+		  padding-right: 24px;
+		  padding-left: 24px;
+		}
+
+		.modal-open {
+		  overflow: hidden;
+		}
+
+		.modal-title {
+		  font-size: 20px;
+		  line-height: 28px;
+		  margin-top: 0;
+		  margin-right: 28px;
+		  margin-bottom: 24px;
+		}
+
+		.modal-va-middle {
+		  -webkit-box-align: center;
+		  -webkit-align-items: center;
+		      -ms-flex-align: center;
+		              -ms-grid-row-align: center;
+		          align-items: center;
+		}
+		.modal-va-middle .modal-dialog {
+		  -webkit-box-flex: 1;
+		  -webkit-flex-grow: 1;
+		      -ms-flex-positive: 1;
+		          flex-grow: 1;
+		}
+		@media only screen and (min-width: 480px) {
+		  .modal-va-middle .modal-dialog.modal-xs {
+		    -webkit-box-flex: 0;
+		    -webkit-flex-grow: 0;
+		        -ms-flex-positive: 0;
+		            flex-grow: 0;
+		  }
+		}
+		@media only screen and (min-width: 992px) {
+		  .modal-va-middle .modal-dialog {
+		    -webkit-box-flex: 0;
+		    -webkit-flex-grow: 0;
+		        -ms-flex-positive: 0;
+		            flex-grow: 0;
+		  }
+		}
+
+		.modal-va-middle-show {
+		  display: -webkit-box;
+		  display: -webkit-flex;
+		  display: -ms-flexbox;
+		  display: flex;
+		}
+		.modal-scrollbar-measure {
+		  height: 50px;
+		  overflow: scroll;
+		  position: absolute;
+		  top: -99999px;
+		  width: 50px;
+		}
+		.text-left {
+		  text-align: left;
+		}
+
+		.text-right {
+		  text-align: right;
+		}
+		.text-black-hint {
+		  color: #9a9a9a;
 		}
 		
-		
-		
-		.pagination > .disabled > span {
-		  border-color: #fff;
-		}
-		
-		
-		pre {
-			white-space: pre-wrap;
-			word-wrap: break-word;
-		}
-		
-		.progress-green .progress-bar {
-			background-color: #f0231b;
-		}
-		
-		.progress-green {
-			background-color: #000;
-		}
-		
-		.progress-green .progress-bar {
-			background-color: #ff0a00;
-		}
-		
-		.page-orange .ui-content-header {
-			background-image: url(/theme/material/css/images/bg/amber.jpg);
-		}
-		
-		.content-heading {
-			font-weight: 300;
-			color: #fff;
-		}
-				
-	</style>
-	
-	
-	
+    </style>
+
 </head>
-<body class="page-orange">
-	<header class="header header-orange header-transparent header-waterfall ui-header">
-		<ul class="nav nav-list pull-left">
-			<div>
-				<a data-toggle="menu" href="#ui_menu">
-					<span class="icon icon-lg text-white">menu</span>
-				</a>
-			</div>
-		</ul>
-		
-		<ul class="nav nav-list pull-right">
-			<div class="dropdown margin-right">
-				<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
-				{if $user->isLogin}
-					<span class="access-hide">{$user->user_name}</span>
-					<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="{$user->gravatar}"></span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-right">
-						<li>
-							<a class="padding-right-lg waves-attach" href="/user/"><span class="icon icon-lg margin-right">account_box</span>用户中心</a>
-						</li>
-						<li>
-							<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">exit_to_app</span>登出</a>
-						</li>
-					</ul>
-				{else}
-					<span class="access-hide">未登录</span>
-					<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="/theme/material/images/users/avatar-001.jpg"></span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-right">
-						<li>
-							<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">account_box</span>登录</a>
-						</li>
-						<li>
-							<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">pregnant_woman</span>注册</a>
-						</li>
-					</ul>
-				{/if}
-					
-			</div>
-		</ul>
-	</header>
-	<nav aria-hidden="true" class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-content">
-				<a class="menu-logo" href="/"><i class="icon icon-lg">person_pin_circle</i>&nbsp;用户面板</a>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_me">我的</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_me">
+<body>
+	<nav class="navbar navbar-default navbar-static-top" id="nav">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button aria-expanded="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="/user">Way To ShadowSock</a>
+	        </div>
+	        <div aria-expanded="false" class="navbar-collapse collapse" id="bs-navbar-collapse">
+	            <ul class="nav navbar-nav">
+	                <li><a href="/user">概览</a></li>
+	                <li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="/user/edit">个人设置</a></li>	
+	                        {if $user->isAdmin()}
 							<li>
-								<a href="/user">
-									<i class="icon icon-lg">recent_actors</i>&nbsp;首页
-								</a>
+								<a href="/admin">管理面板</a>
 							</li>
-							
 							<li>
-								<a href="/user/profile">
-									<i class="icon icon-lg">info</i>&nbsp;账户信息
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/edit">
-									<i class="icon icon-lg">sync_problem</i>&nbsp;资料编辑
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/invite">
-									<i class="icon icon-lg">loyalty</i>&nbsp;邀请码
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/announcement">
-									<i class="icon icon-lg">announcement</i>&nbsp;查看公告
-								</a>
-							</li>
-							
-							
-							{if $config['enable_donate']=='true'}
-							<li>
-								<a href="/user/donate">
-									<i class="icon icon-lg">attach_money</i>&nbsp;捐赠公示
-								</a>
-							</li>
-							{/if}
-							
-							
-						</ul>
-						
-						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_use">使用</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_use">
-							<li>
-								<a href="/user/node">
-									<i class="icon icon-lg">router</i>&nbsp;节点列表
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/relay">
-									<i class="icon icon-lg">compare_arrows</i>&nbsp;中转规则
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/trafficlog">
-									<i class="icon icon-lg">traffic</i>&nbsp;流量记录
-								</a>
-							</li>
-							
-							<li>
-								<a href="/user/lookingglass">
-									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;观察窗
-								</a>
-							</li>
-						</ul>
-
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_detect">审计</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_detect">
-							<li><a href="/user/detect"><i class="icon icon-lg">account_balance</i>&nbsp;审计规则</a></li>
-							<li><a href="/user/detect/log"><i class="icon icon-lg">assignment_late</i>&nbsp;审计记录</a></li>
-						</ul>
-						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_trade">帮助</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_trade">
-							{if $config['enable_wecenter']=='true'}
-							<li>
-								<a href="{$config["wecenter_url"]}" target="_blank">
-									<i class="icon icon-lg">help</i>&nbsp;问答系统
-								</a>
-							</li>
-							{/if}
-							
-							<li>
-								<a href="/user/ticket">
-									<i class="icon icon-lg">question_answer</i>&nbsp;工单系统
-								</a>
-							</li>
-						</ul>
-
-						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">交易</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_help">
-						
-						
-							<li>
-								<a href="/user/shop">
-									<i class="icon icon-lg">shop</i>&nbsp;商店
-								</a>
-							</li>
-							
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
-							
-							
-
-
-							<li>
-								<a href="/user/code">
-									<i class="icon icon-lg">code</i>&nbsp;充值
-								</a>
-							</li>
-						</ul>
-						
-						{if $user->isAdmin()}
-							<li>
-								<a href="/admin">
-									<i class="icon icon-lg">person_pin</i>&nbsp;管理面板
-								</a>
+								<a href="http://113.20.157.11/phpmyadmin/">MYSQL</a>
 							</li>
 						{/if}
+                        
+	                    </ul>
+	                
+	                
+	                <li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">节点 <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="/user/node">节点列表</a></li>
+	                        <li><a href="/user/relay">中转设置</a></li>
+	                    </ul>
+	                </li>
+	                <li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">交易 <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="http://t.cn/RfbTBeF">购买充值码</a></li>
+	                        <li><a href="/user/shop">购买时长</a></li>
+	                    </ul>
+	                </li>
+	                <li><a href="/user/invite">邀请</a></li>
+	            </ul>
 
-
-						
-
-						
-					</li>
-				</ul>
-			</div>
-		</div>
+	            <ul class="nav navbar-nav navbar-right">
+	                <li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">zach <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="/user/profile">账号信息</a></li>
+	                        <li><a href="/user/logout">退出登录</a></li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
 	</nav>

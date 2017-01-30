@@ -18,9 +18,18 @@
 		</div>
 		<div class="container">
 						<section class="content-inner margin-top-no">
+						<div class="box">
+								<div class="card-main">
+									<div class="card-inner">
+										<div class="card-img">
+											<img src="http://www.cr173.com/up/2016-9/14746150966287000.gif" style="width: 100%;">
+										</div>
+									</div>
+								</div>
+							</div>
 
 
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 										<h2 class="content-sub-heading">版权协议</h2>
@@ -52,31 +61,32 @@
 							</div>
 
 
-
-
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
-										<h2 class="content-sub-heading">免责声明</h2>
-										<p>您当前所访问的站点使用的是下面所提到的开源程序。您能看到这个页面仅代表这个站点使用了本程序，其使用过程中发生的一切问题需要其自行解决，本程序不承担任何责任。</p>
+										<h2 class="content-sub-heading">原作</h2>
+										<p><a href="https://github.com/orvice/">orvice</a>&nbsp;<a href="#">glzjin</a></p>
+										
 									</div>
 								</div>
 							</div>
 
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-											<h2 class="content-sub-heading">原作</h2>
-											<p><a href="https://github.com/orvice/">orvice</a></p>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
+							<div class="box">
 								<div class="card-main">
 									<div class="card-inner">
 											<h2 class="content-sub-heading">鸣谢</h2>
-											<p>所有被引用过代码的同学，以及所有提交过issue的同学。当然，还有在使用这份程序的你我Ta。</p>
+											<p>所有被引用过代码的同学，以及所有提交过issue的同学。<br />
+											当然，还有在使用这份程序的你我Ta。</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="box">
+								<div class="card-main">
+									<div class="card-inner">
+										<div class="card-img">
+											<img src="http://www.cr173.com/up/2016-9/14746150966287000.gif" style="width: 100%;">
+										</div>
 									</div>
 								</div>
 							</div>

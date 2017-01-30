@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
 					<section class="content-inner">
-						<div class="card">
+						<div class="box">
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
@@ -17,7 +17,7 @@
 									<form action="javascript:void(0);"  method="POST">
 										<p class="text-center">
 											<span class="avatar avatar-inline avatar-lg">
-												<img alt="Login" src="/theme/material/images/users/avatar-001.jpg">
+												<img alt="Login" src="/favicon.ico">
 											</span>
 										</p>
 									
@@ -37,30 +37,12 @@
 												</div>
 											</div>
 										</div>
-										
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="code">两步验证码(没有就别填)</label>
-													<input class="form-control" id="code" type="text" placeholder="没有就别填">
-												</div>
-											</div>
-										</div>
-										
-										{if $geetest_html != null}
-											<div class="form-group form-group-label">
-												<div class="row">
-													<div class="col-md-10 col-md-push-1">
-														<div id="embed-captcha"></div>
-													</div>
-												</div>
-											</div>
-										{/if}
+								
 										
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">登录</button>
+													<button id="login" type="submit" class="btn btn-info">登录</button>
 												</div>
 											</div>
 										</div>
@@ -82,8 +64,8 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">忘记密码</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">注册个帐号</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-info" href="/password/reset">忘记密码</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-info" href="/auth/register">注册个帐号</a></p>
 						</div>
 						
 						
@@ -180,30 +162,7 @@
 </script>
 
 
-{if $geetest_html != null}
-<script>
-	var handlerEmbed = function (captchaObj) {
-        // 将验证码加到id为captcha的元素里
-		
-		captchaObj.onSuccess(function () {
-            		validate = captchaObj.getValidate();
-		});
-		
-		captchaObj.appendTo("#embed-captcha");
 
-		captcha = captchaObj;
-		// 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
-    };
-	
-	initGeetest({
-		gt: "{$geetest_html->gt}",
-		challenge: "{$geetest_html->challenge}",
-		product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
-		offline: {if $geetest_html->success}0{else}1{/if} // 表示用户后台检测极验服务器是否宕机，与SDK配合，用户一般不需要关注
-	}, handlerEmbed);
-</script>
-
-{/if}
 
 
 
