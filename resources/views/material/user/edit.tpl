@@ -5,15 +5,13 @@
 		<div class="container">
 			<div class="row">
          	   <div class="col-lg-12 col-md-12">
-					<h1 class="content-heading">修改资料</h1>
+					<h1>修改资料</h1>
 				</div>
 			</div>
 		</div>	
 		
 		<div class="container">
-			
-
-
+			<div class="row">
 					<div class="col-lg-6 col-md-6">
 						<div class="box">
 							<p class="card-heading">修改密码</p>
@@ -162,10 +160,6 @@
 							<p><button class="btn btn-primary" id="rss-update">提交</button></p>
 						</div>						
 						{/if}
-
-
-		
-
 					</div>
 
 					<div class="col-lg-6 col-md-6">
@@ -176,10 +170,7 @@
 							<p><button class="btn btn-primary" id="unblock">解封</button></p>							
 						</div>
 
-
-
 						<div class="box">
-
 							<p class="card-heading">每日邮件接收设置</p>
 							<p>当前设置：{if $user->sendDailyMail==1} 发送 {else} 不发送 {/if}</p>
 								<div class="form-group">
@@ -253,9 +244,11 @@
 
 
 
+
+
 					{include file='dialog.tpl'}
 
-			
+			</div>
 		</div>
 	</section>
 

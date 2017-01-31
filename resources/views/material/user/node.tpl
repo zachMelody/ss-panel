@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>节点列表</h1>
+                <h1 class="box-title">节点列表</h1>
             </div>
         </div>
 

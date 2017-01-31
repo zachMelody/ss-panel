@@ -5,13 +5,13 @@
 	<div class="container">
 		<div class="row"> 
 			<div class="col-md-12">
-				<h2>购买时长</h2>
+				<h2 class="box-title">购买时长</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-8">
 				<div class="box">
-					<h3 class="box-title">商品列表</h3>
+					<h3 >商品列表</h3>
 					<p>系统中所有商品的列表。您购买等级类的商品时有效期会从当前时间开始计算。</p>
 					<p>当前余额：<code>{$user->money} </code>元</p>
 					<br />

@@ -12,36 +12,35 @@
 	<section>
 		<div class="container">
 			<div class="row">
-			<div class="col-lg-12 col-md-12">
-				<h1>中转规则管理</h1>
-			</div>
+				<div class="col-lg-12 col-md-12">
+					<h1>中转规则管理</h1>
+				</div>
 			</div>
 		</div>
 		<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-	
-				<div class="box">
-					<p>系统中您所有的中转规则。</p>							
-				</div>
+			<div class="row">
+				<div class="col-md-12">	
+					<div class="box">
+						<p>系统中您所有的中转规则。</p>							
+					</div>
 					
 					<div class="box">
+						<div class="table-responsive">
 						{$rules->render()}
 						<table class="table table-striped">
 						    <tr>
-							<th>操作</th>
-							<th>ID</th>
-							<th>起源节点</th>
-							<th>目标节点</th>
-							<th>端口</th>
-							<th>优先级</th>
-							
+								<th>操作</th>
+								<th>ID</th>
+								<th>起源节点</th>
+								<th>目标节点</th>
+								<th>端口</th>
+								<th>优先级</th>							
 							</tr>
 							{foreach $rules as $rule}
 								<tr>
 								<td>
 									<a class="btn btn-info" href="/user/relay/{$rule->id}/edit">编辑</a>
-									<a class="btn btn-danger btn-sm" id="delete" value="{$rule->id}" href="javascript:void(0);" onClick="delete_modal_show('{$rule->id}')">删除</a>
+									<a class="btn btn-danger" id="delete" value="{$rule->id}" href="javascript:void(0);" onClick="delete_modal_show('{$rule->id}')">删除</a>
 								</td>
 								<td>#{$rule->id}</td>
 								{if $rule->source_node_id == 0}
@@ -56,6 +55,7 @@
 						    {/foreach}
 						</table>
 						{$rules->render()}
+						</div>
 					</div>
 					
 					<div class="row">

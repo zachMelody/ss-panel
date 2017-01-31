@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box">
-                    <h2>注意！</h2>
+                    <h2 class="box-title">注意！</h2>
                     <p>邀请码请给认识的需要的人。</p>
                     <p>邀请有记录，若被邀请的人违反用户协议，您将会有连带责任。</p>
                     <p>用户注册48小时后，才可以生成邀请码。</p>
@@ -41,7 +41,6 @@
                         <table class="table table-striped">
                             <thead>														
 							<tr>
-								<th>###</th>
 								<th>邀请码(点右键复制链接)</th>
 								<th>状态</th>
 							</tr>
@@ -49,7 +48,6 @@
 							<tbody>
 							{foreach $codes as $code}
 								<tr>
-									<td><b>{$code->id}</b></td>
 									<td><a href="/auth/register?code={$code->code}" target="_blank">{$code->code}</a></td>
 									<td>可用</td>
 								</tr>

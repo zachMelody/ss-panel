@@ -1,10 +1,4 @@
-
-
-
-
 {include file='header.tpl'}
-
-
 <section>
 	<div class="container">
 		<div class="row">			
@@ -13,10 +7,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="box">
-				<p>{$config["appName"]} 的邀请码，没了的话就烧纸吧。</p>
-			</div>
-			<div class="box">
+			<div class="col-lg-12">
+				<div class="box">
+					<p>{$config["appName"]} 的邀请码，没了的话就烧纸吧。</p>
+				</div>
+				<div class="box">
 					<div class="table-responsive">
 						<table class="table">
 							<thead>
@@ -37,11 +32,9 @@
 							</tbody>
 						</table>
 					</div>
-						
+				</div>	
 			</div>
 		</div>
 	</div>
 </section>
-
-
 {include file='footer.tpl'}
